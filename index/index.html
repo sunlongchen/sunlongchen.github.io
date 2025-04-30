@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Page</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    .sidebar {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 220px;
+      height: 100vh;
+      background-color: #f0f0f0;
+      padding: 20px 10px;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+
+    .sidebar button:hover {
+      background-color: #ddd;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      margin-right: 220px; /* 留出侧栏空间 */
+    }
+
+    .member-description {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-left: 4px solid #888;
+    }
+
+    .member-description img {
+      display: block;
+      margin: 15px auto;
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content" id="main-content">
+    <h1>Welcome to Our Team Page</h1>
+    <p>Click a name from the sidebar to see more information about each member.</p>
+  </div>
+
+  <div class="sidebar">
+    <h2>Team Members</h2>
+    <button onclick="showInfo('longcheng')">Longcheng SUN</button>
+    <button onclick="showInfo('yijing')">Yijing JI</button>
+    <button onclick="showInfo('yanlu')">Yanlu HU</button>
+    <button onclick="showInfo('haixi')">Haixi ZHAO</button>
+  
+    <h2>PPT Design Ideas</h2>
+    <button onclick="showInfo('ppt')">PPT Outline</button>
+  </div>
+
+  <script>
+    function showInfo(member) {
+      const content = document.getElementById("main-content");
+      let html = "";
+
+      if (member === 'longcheng') {
+        html = `
+          <h1>Longcheng SUN</h1>
+          <div class="member-description">
+            <p><strong>Longcheng SUN</strong> was the planner of our PPEI final report. He was responsible for coordinating how to design the final report format and divide tasks among group members. In the end, he decided that our group would present the final report in both <strong>webpage</strong> and <strong>PowerPoint</strong> formats.</p>
+           
+            <img src="1561745759338_.pic_hd.jpeg" alt="Longcheng SUN portrait">
+            <img src="1641745760080_.pic_hd.jpg" alt="Longcheng SUN business card">
+          </div>
+        `;
+      } else if (member === 'yijing') {
+        html = `
+          <h1>Yijing JI</h1>
+          <div class="member-description">
+            <p><strong>Yijing JI</strong> is the <strong>graphic designer</strong> and the main <strong>script designer</strong> for our PPEI final report. She was responsible for <strong>PPT layout design, animation production, color adjustment, composition and layout, and many other graphic tasks</strong>, providing our final report with <strong>extremely professional art direction</strong>.</p>
+            <img src="0E2E25CA-2DCA-4508-81E8-F191FAD3025B.jpeg" alt="Yijing JI portrait">
+            <img src="E2D860A5-D6D2-4A90-938E-144A5C36EE89.png" alt="Yijing JI card">
+          </div>
+        `;
+      } else if (member === 'yanlu') {
+        html = `
+          <h1>Yanlu HU</h1>
+          <div class="member-description">
+            <p><strong>Yanlu HU</strong> was mainly responsible for <strong>all interview-related arrangements</strong>. She carefully prepared for each interview, from the first foreign teacher to the last Chinese teacher, always <strong>adjusting her tone and manner</strong> according to each teacher's personality to ensure they felt <strong>comfortable</strong>. At the same time, to arrange each session meticulously, she selected a <strong>suitable classroom</strong> for every teacher to minimize their nervousness.</p>
+            <img src="05027E74-B65E-4FC2-A3F6-89C19FFF073B.png" alt="Yanlu HU portrait">
+            <img src="9284DD16-9E80-4B34-98FB-C18CBFE250B1.png" alt="Yanlu HU card">
+          </div>
+        `;
+      } else if (member === 'haixi') {
+        html = `
+          <h1>Haixi ZHAO</h1>
+          <div class="member-description">
+            <p><strong>Haixi ZHAO</strong> was responsible for designing our PPEI interview approach. He approached this from <strong>two perspectives</strong>: first, <strong>cultural differences</strong>, which led him to arrange interviews with <strong>two</strong> foreign teachers alongside <strong>two</strong> Chinese teachers. In addition to this idea, he also suggested that we broadly interview experts from different fields to absorb knowledge from <strong>various disciplines</strong>, which would help us build an <strong>interdisciplinary thinking system</strong>, lay a solid foundation for future <strong>AI+Bio</strong> work, and broaden our horizons.</p>
+            <img src="11371745975559_.pic.jpg" alt="Haixi ZHAO portrait">
+            <img src="1661745760083_.pic_hd.jpg" alt="Haixi ZHAO card">
+          </div>
+        `;
+           } else if (member === 'ppt') {
+        html = `
+          <h1>PPT Outline</h1>
+          <div class="member-description">
+            <ul>
+              <li>Team member outline — pages 1 to 3</li>
+              <li>Question 1: Detailed presentation of the field of interest — page 4</li>
+              <li>Question 2: Presentation of the related job — pages 5–6</li>
+              <li>Question 3: Transversal skills developed — page 7</li>
+              <li>Question 4: Approach to information gathering — page 8</li>
+              <li>Question 5: Original approach/presentation — page 9</li>
+              <li>Question 6: Interview questionnaire — page 10</li>
+              <li>Question 7: Summary of interviews — pages 11–16</li>
+              <li>Question 8: Proof of meetings — page 17</li>
+            </ul>
+            <img src="outline.png" alt="PPT Outline Diagram">  
+
+          </div>
+        `;
+      }
+
+      content.innerHTML = html;
+    }
+  </script>
+
+</body>
+</html>
